@@ -9,17 +9,19 @@ public class TestMaximum<T extends Comparable<T>> {
 	    }
 	
 	    //generic method
-		public static <T extends Comparable<T>> void findMaximum(T... arr) {
+		public static <T extends Comparable<T>> T findMaximum(T... arr) {
 			 T max=arr[0];
 		        for(int i =1;i<arr.length;i++){
 		            if(arr[i].compareTo(max)>0){
 		                max=arr[i];
 		            }
 		        }
-				System.out.println("Maximum value is "+max);
-		
-		}
-		
+		        printMax(max);
+		        return max;
+		    }
+		    public static <T>void printMax(T max){
+		        System.out.println("Maximum is  "+max);
+		    }
 		
 		public static void main(String[] args) {
 			
