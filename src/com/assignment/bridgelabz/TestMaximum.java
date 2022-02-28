@@ -1,30 +1,42 @@
 package com.assignment.bridgelabz;
 
 public class TestMaximum {
-	public static void findMaximum(String[] arr) {
-		String max="A";
-		for(int i=0;i<arr.length;i++) {
-			if(arr[i].compareTo(max) >0 ){
-				max = arr[i];
+	//generic method
+		public static<T extends Comparable<T>> void findMaximum(T x,T y,T z) {
+			T max = x;
+			if(y.compareTo(max)>0) {
+				max = y;
 			}
-	
+		    if(z.compareTo(max)>0) {
+		    	max=z;
+		    }	
+			System.out.println("Maxumum is "+ max);
 		}
-		System.out.println("Max string is "+max);
 		
-	
-	}
-	public static void main(String[] args) {
-	 String stringArray1[]= {"Peach","Apple","Banana"};           // Test Case 1
-	 String stringArray2[]= {"Apple","Caurlipower","Banana"};     //Test Case  2
-	 String stringArray3[]= {"Apple","Caurlipower","Peach"};     //Test Case  3
-	 
-	 //Find Maximum float Value
-	 findMaximum(stringArray1);
-	 findMaximum(stringArray2);
-	 findMaximum(stringArray3);
+		
+		public static void main(String[] args) {
+			
+		 Integer xint=3,yint=4,zint=5;
+		 Float   xf1=6.6f,yf1=8.8f,zf1=7.7f;
+		 String xstr="pear",ystr="apple",zstr="orange";
+		 
+		 //calling generic method
+		 //Test case 1
+		 findMaximum(xint,yint,zint);
+		 findMaximum(xf1,yf1,zf1);
+		 findMaximum(xstr,ystr,zstr);
+		 
+		 //Test case 2
+		 findMaximum(yint,xint,zint);
+		 findMaximum(yf1,xf1,zf1);
+		 findMaximum(ystr,xstr,zstr);
+		 
+		 //Test case 3
+		 findMaximum(xint,zint,yint);
+		 findMaximum(xf1,zf1,xf1);
+		 findMaximum(zstr,ystr,xstr);
+		 
+
+		}
 
 	}
-
-}
-
-
