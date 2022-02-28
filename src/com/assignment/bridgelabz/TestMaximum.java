@@ -1,28 +1,30 @@
 package com.assignment.bridgelabz;
 
 public class TestMaximum {
-
-	public static void findMaximum(Integer[] arr) {
-		int max=0;
-	
+	public static void findMaximum(String[] arr) {
+		String max="A";
 		for(int i=0;i<arr.length;i++) {
-			if(arr[i]>max) {
+			if(arr[i].compareTo(max) >0 ){
 				max = arr[i];
 			}
-			
+	
 		}
-		System.out.println("Max value is "+max);
+		System.out.println("Max string is "+max);
 		
+	
 	}
 	public static void main(String[] args) {
-	 Integer intArray1[]= {45,32,2};
-	 Integer intArray2[]= {7,32,2};
-	 Integer intArray3[]= {18,32,78};
+	 String stringArray1[]= {"Peach","Apple","Banana"};           // Test Case 1
+	 String stringArray2[]= {"Apple","Caurlipower","Banana"};     //Test Case  2
+	 String stringArray3[]= {"Apple","Caurlipower","Peach"};     //Test Case  3
 	 
-	 findMaximum(intArray1);
-	 findMaximum(intArray2);
-	 findMaximum(intArray3);
+	 //Find Maximum float Value
+	 findMaximum(stringArray1);
+	 findMaximum(stringArray2);
+	 findMaximum(stringArray3);
 
 	}
 
 }
+
+
